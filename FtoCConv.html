@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<meta charset="urf-8">
+<link rel="icon" type="image/png" href="faviconjs2.png" />
+<meta name="author" content="Mariusz Walczyk">
+<title>FtoC Converter</title>
+<style>
+body{
+background: darkgray;
+}
+button{
+background: gray;
+width: 50px;
+length: 50px;
+margin: 5px;
+padding: 0 auto;
+}
+.center{
+text-align: center;
+}
+p{
+font-size: 35px;
+}
+#box{
+text-align: center;
+font-size: 20px;
+background: lightblue;
+border: solid;
+width: 20%;
+margin-left: 40%;
+}
+</style>
+</head>
+<body>
+<script>
+var cel = "";
+function result(x)
+{
+parseInt(x,10)
+document.getElementById("box").innerHTML = "F: " + cel + "<br />" + "C: " + (x-32)/1.8;
+}
+function addCel(x)
+{
+cel += x;
+document.getElementById("box").innerHTML = cel;
+}
+function useC()
+{
+cel ="";
+document.getElementById("box").innerHTML = "Result will be shown here";
+}
+function backSpace()
+{
+cel = cel.substring(0, cel.length - 1);
+document.getElementById("box").innerHTML = cel;
+}
+</script>
+<div class="center">
+<p>Enter Fahrenheit value and convert it to Celsius!</p>
+
+<section>
+<p id="box">Result will be shown here</p>
+</section>
+<button type="button" onclick='result(cel)' style="background: darkgreen">Go</button>
+<br />
+<button type="button" onclick="addCel(1)">1</button>
+<button type="button" onclick="addCel(2)">2</button>
+<button type="button" onclick="addCel(3)">3</button>
+<br />
+<button type="button" onclick="addCel(4)">4</button>
+<button type="button" onclick="addCel(5)">5</button>
+<button type="button" onclick="addCel(6)">6</button>
+<br />
+<button type="button" onclick="addCel(7)">7</button>
+<button type="button" onclick="addCel(8)">8</button>
+<button type="button" onclick="addCel(9)">9</button>
+<br />
+<button type="button" onclick="addCel(0)">0</button>
+<br />
+<button type="button" onclick="useC()">C</button>
+<button type="button" onclick="backSpace()" style="width: 80px">Backspace</button>
+
+</div>
+</body>
+</html>
